@@ -1,0 +1,20 @@
+
+@font-face {
+   font-family: ttb-regular;
+   src: url('../fonts/ttb-regular.woff2') format('woff2'),
+   url('../fonts/ttb-regular.woff') format('woff');
+}
+@font-face {
+ font-family: ttb-bold;
+ src: url('../fonts/ttb-bold.woff2') format('woff2'),
+ url('../fonts/ttb-bold.woff') format('woff');
+}
+@font-face {
+   font-family: ttb-light;
+   src: url('../fonts/ttb-light.woff2') format('woff2'),
+   url('../fonts/ttb-light.woff') format('woff');
+}
+div {
+  font-family: ttb-regular;
+  font-size: 13px;
+}

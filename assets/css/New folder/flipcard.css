@@ -1,0 +1,66 @@
+.flip-card {
+  position: relative;
+  background-color: transparent;
+  /*
+  max-width: 110px;
+  max-height: 94px;
+  */
+  width:32%;
+  height: 100%
+  perspective: 1000px;
+  margin: 2px;
+  float: left;
+  border-radius: 6px;
+}
+
+/* Card */
+.card-boximg {
+  margin:auto; background: #ff0000;
+  max-width:360px; border-radius: 10px;
+}
+.card-title {
+  padding:8px;font-size:13px;text-align:center;color:#0056ff;font-weight:700;
+}
+.card-box {
+  width:220px;float: left;text-align:center;
+}
+.card-boxtitle {
+  padding:35px 20px 30px 20px;font-size:15px;text-decoration: underline;
+}
+
+.a_image {
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.overlay {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #f68b1f;
+  border-radius:5px;
+}
+
+.flip-card:hover .overlay {
+  opacity: 1; cursor: pointer;
+}
+
+.flip-text {
+  font-size: 11px; color:#fff; text-align: center; line-height: 1.2; margin-top:4px;
+}
+
+.title-text-random {
+  font-size:13px; margin:20px auto 20px auto;color:#ff0000;font-weight:600;line-height: 1.1;
+}
+
+
