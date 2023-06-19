@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>LINE Retail Society</title>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="assets/img/favicom.ico" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/ttb.css" rel="stylesheet">
+  <link href="assets/css/css.css" rel="stylesheet">
+  <link href="assets/css/w3.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.12.0/sdk.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+</head>
+
+<body style="background: url(./img/bg.jpg) fixed; background-size: cover;background-position: center;">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <h1 class="logo mr-auto"><a href="index.html"><span>LINE</span> Retail Society</a></h1>
+    </div>
+  </header>
+  <div id="isLoggedIn" style="color:#fff;"></div>
+
+  <main id="main">
+    <center><div style="margin-top:100px;"><img src="./img/txt-gift.png" style="width:200px;"></div></center>
+    <div class="container" style="top:80%;text-align: center;">
+      <div id="loading">
+        <div style="margin-top:40px;"><img src="./img/loading1.gif" style="width:40px;"></div>
+        <div style="margin-top:12px;">... L o a d i n g ...</div>
+      </div>
+      <div id="NoService" style="display: none;margin-top:30px;">
+        <div class="btn-t8" style="background:#ff0000; color:#ffffff; line-height: 1.2; font-weight: 600;padding:16px 20px;width:84%; border-radius: 8px;margin:auto;">คุณไม่ได้รับสิทธิ์ในการเข้าถึงข้อมูลนี้<br>กรุณาบอกเราว่าคุณมีความจำเป็นอย่างไร<br>
+          <a href="mailto:rangsiwuth.tub@ttbbank.com" style="text-decoration: none;"><div class="btn-t2" style="margin-top:15px;;">แจ้งเหตุผลเข้าใช้ระบบงาน</div></a>
+        </div>
+      </div>
+      <div id="OldSurvey" style="display: none;margin-top:60px;">
+        <div style="margin:auto;">
+          <div class="btn-t2" onclick="location.href='home.html'" style="margin-top:-10px; width:220px;padding:10px;color:#fff;background-color: #0056ff; border:2px solid #fff; border-radius: 8px;">คลิกเพื่อเข้าสู่<br>ระบบจองของขวัญปีใหม่ 2567</div>
+          <div class="clr"></div>
+        </div>
+      </div>
+    </div>
+    <div class="clr" style="height: 20px;"></div>
+  </main>
+  <script src="js/connect.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
