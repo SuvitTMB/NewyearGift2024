@@ -24,8 +24,6 @@ $(document).ready(function () {
   $("#MyProfile").html(str);  
   Connect_DB();
    
-*/
-  main();
 
   dbProfile = firebase.firestore().collection("CheckProfile");
   dbNewyearMember = firebase.firestore().collection("Newyear2024_member");
@@ -33,6 +31,8 @@ $(document).ready(function () {
   dbNewyearLog = firebase.firestore().collection("Newyear2024_log");
 
   CheckData();
+*/
+  main();
 });
 
 
@@ -58,6 +58,11 @@ async function getUserProfile() {
   str += '<div class="NameLine">'+ sessionStorage.getItem("LineName")+'</div>';
   $("#MyProfile").html(str);  
   Connect_DB();
+  dbProfile = firebase.firestore().collection("CheckProfile");
+  dbNewyearMember = firebase.firestore().collection("Newyear2024_member");
+  dbNewyearData = firebase.firestore().collection("Newyear2024_data");
+  dbNewyearLog = firebase.firestore().collection("Newyear2024_log");
+  CheckData();
 }
 
 
