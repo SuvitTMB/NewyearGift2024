@@ -167,6 +167,7 @@ function LoadGiftStock() {
   dbGiftStock.where('StockStatus','==',1)
   //.where('StockGroup','==','asc')
   .orderBy('StockGroup','asc')
+  .orderBy('StockOrder','asc')
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
       //console.log(doc.id+"--- id"+i);
