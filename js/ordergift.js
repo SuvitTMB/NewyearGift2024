@@ -150,6 +150,7 @@ var xCountRec = 0;
 var xSumAllPrice = 0;
 var xSumUnitPrice = 0;
 var xTotalUnitPrice = 0;
+var xBalance = 0;
 function LoadGiftStock() {
   LoadDetail();
   var str = "";
@@ -282,9 +283,25 @@ function CalGift() {
   var xSumUnitPrice7 = parseFloat(document.getElementById("UnitPrice7").value * document.getElementById("OrderGiftID7").value);
   var xSumUnitPrice8 = parseFloat(document.getElementById("UnitPrice8").value * document.getElementById("OrderGiftID8").value);
 
+  var xSumUnitPrice9 = parseFloat(document.getElementById("UnitPrice9").value * document.getElementById("OrderGiftID9").value);
+  var xSumUnitPrice10 = parseFloat(document.getElementById("UnitPrice10").value * document.getElementById("OrderGiftID10").value);
+  var xSumUnitPrice11 = parseFloat(document.getElementById("UnitPrice11").value * document.getElementById("OrderGiftID11").value);
+  var xSumUnitPrice12 = parseFloat(document.getElementById("UnitPrice12").value * document.getElementById("OrderGiftID12").value);
+  var xSumUnitPrice13 = parseFloat(document.getElementById("UnitPrice13").value * document.getElementById("OrderGiftID13").value);
+  var xSumUnitPrice14 = parseFloat(document.getElementById("UnitPrice14").value * document.getElementById("OrderGiftID14").value);
+  var xSumUnitPrice15 = parseFloat(document.getElementById("UnitPrice15").value * document.getElementById("OrderGiftID15").value);
 
-  xTotalUnitPrice = parseFloat(document.getElementById("OrderGiftID0").value) + parseFloat(document.getElementById("OrderGiftID1").value) + parseFloat(document.getElementById("OrderGiftID2").value) + parseFloat(document.getElementById("OrderGiftID3").value)+ parseFloat(document.getElementById("OrderGiftID4").value)+ parseFloat(document.getElementById("OrderGiftID5").value)+ parseFloat(document.getElementById("OrderGiftID6").value)+ parseFloat(document.getElementById("OrderGiftID7").value)+ parseFloat(document.getElementById("OrderGiftID8").value);
-  xTotalPrice = parseFloat(xSumUnitPrice0) + parseFloat(xSumUnitPrice1) + parseFloat(xSumUnitPrice2)  + parseFloat(xSumUnitPrice3) + parseFloat(xSumUnitPrice4) + parseFloat(xSumUnitPrice5) + parseFloat(xSumUnitPrice6) + parseFloat(xSumUnitPrice7) + parseFloat(xSumUnitPrice8);
+  var AA = parseFloat(document.getElementById("OrderGiftID0").value) + parseFloat(document.getElementById("OrderGiftID1").value) + parseFloat(document.getElementById("OrderGiftID2").value) + parseFloat(document.getElementById("OrderGiftID3").value)+ parseFloat(document.getElementById("OrderGiftID4").value)+ parseFloat(document.getElementById("OrderGiftID5").value)+ parseFloat(document.getElementById("OrderGiftID6").value);
+  var BB = parseFloat(document.getElementById("OrderGiftID7").value) + parseFloat(document.getElementById("OrderGiftID8").value) + parseFloat(document.getElementById("OrderGiftID9").value) + parseFloat(document.getElementById("OrderGiftID10").value)+ parseFloat(document.getElementById("OrderGiftID11").value)+ parseFloat(document.getElementById("OrderGiftID12").value)+ parseFloat(document.getElementById("OrderGiftID13").value);
+  var CC = parseFloat(document.getElementById("OrderGiftID14").value)+ parseFloat(document.getElementById("OrderGiftID15").value);
+  xTotalUnitPrice = AA + BB + CC; 
+  var XX = parseFloat(xSumUnitPrice0) + parseFloat(xSumUnitPrice1) + parseFloat(xSumUnitPrice2) + parseFloat(xSumUnitPrice3) + parseFloat(xSumUnitPrice4) + parseFloat(xSumUnitPrice5) ;
+  var YY = parseFloat(xSumUnitPrice6) + parseFloat(xSumUnitPrice7) + parseFloat(xSumUnitPrice8) + parseFloat(xSumUnitPrice9) + parseFloat(xSumUnitPrice10) + parseFloat(xSumUnitPrice11) ;
+  var ZZ = parseFloat(xSumUnitPrice12) + parseFloat(xSumUnitPrice13) + parseFloat(xSumUnitPrice14) + parseFloat(xSumUnitPrice15);
+  xTotalPrice = XX + YY + ZZ;
+  xBalance = xBMAllocated - xTotalPrice;
+  //xTotalUnitPrice = parseFloat(document.getElementById("OrderGiftID0").value) + parseFloat(document.getElementById("OrderGiftID1").value) + parseFloat(document.getElementById("OrderGiftID2").value) + parseFloat(document.getElementById("OrderGiftID3").value)+ parseFloat(document.getElementById("OrderGiftID4").value)+ parseFloat(document.getElementById("OrderGiftID5").value)+ parseFloat(document.getElementById("OrderGiftID6").value)+ parseFloat(document.getElementById("OrderGiftID7").value)+ parseFloat(document.getElementById("OrderGiftID8").value);
+  //xTotalPrice = parseFloat(xSumUnitPrice0) + parseFloat(xSumUnitPrice1) + parseFloat(xSumUnitPrice2)  + parseFloat(xSumUnitPrice3) + parseFloat(xSumUnitPrice4) + parseFloat(xSumUnitPrice5) + parseFloat(xSumUnitPrice6) + parseFloat(xSumUnitPrice7) + parseFloat(xSumUnitPrice8);
 
   //SumItem = addCommas(document.getElementById("OrderGiftID0").value);
   $("#SumUnitPrice0").html(numberWithCommas(xSumUnitPrice0));
@@ -298,14 +315,29 @@ function CalGift() {
   $("#SumUnitPrice8").html(numberWithCommas(xSumUnitPrice8));
 
 
+  $("#SumUnitPrice9").html(numberWithCommas(xSumUnitPrice9));
+  $("#SumUnitPrice10").html(numberWithCommas(xSumUnitPrice10));
+  $("#SumUnitPrice11").html(numberWithCommas(xSumUnitPrice11));
+  $("#SumUnitPrice12").html(numberWithCommas(xSumUnitPrice12));
+  $("#SumUnitPrice13").html(numberWithCommas(xSumUnitPrice13));
+  $("#SumUnitPrice14").html(numberWithCommas(xSumUnitPrice14));
+  $("#SumUnitPrice15").html(numberWithCommas(xSumUnitPrice15));
+
+
+
   str += '<div class="clr"></div>';
   str += '</div><div style="margin-top:30px;padding-top:20px;margin-left:3px;">';
   str += '<div class="box-price"><div style="font-size:12px;font-weight:600;">งบประมาณที่ได้รับ</div><input type="text" value="'+ numberWithCommas(xBMAllocated) +'" style="color:#fff;background:#002d63;"></div></div>';
-  str += '<div class="box-price"><div style="font-size:12px;font-weight:600;">รวมจำนวนชิ้นที่สั่ง</div><input type="text" value="'+ addCommas(xTotalUnitPrice) +'" style="color:#fff;background:#6d7178;"></div></div>';
-  if(xTotalPrice>xBMAllocated) {
-    str += '<div class="box-price"><div style="font-size:12px;font-weight:600;">จำนวนเงินที่สั่ง</div><input type="text" value="'+ numberWithCommas(xTotalPrice) +'" style="color:#fff;background:#ff0000;"></div></div>';  
+  //str += '<div class="box-price"><div style="font-size:12px;font-weight:600;">รวมจำนวนชิ้นที่สั่ง</div><input type="text" value="'+ addCommas(xTotalUnitPrice) +'" style="color:#fff;background:#6d7178;"></div></div>';
+  //if(xTotalPrice>xBMAllocated) {
+  //  str += '<div class="box-price"><div style="font-size:12px;font-weight:600;">จำนวนเงินที่สั่ง</div><input type="text" value="'+ numberWithCommas(xTotalPrice) +'" style="color:#fff;background:#ff0000;"></div></div>';  
+  //} else {
+    str += '<div class="box-price"><div style="font-size:12px;font-weight:600;">จำนวนเงินที่สั่ง</div><input type="text" value="'+ numberWithCommas(xTotalPrice) +'" style="color:#fff;background:#0056ff;"></div></div>';  
+  //}
+  if(xBalance>=0) {
+    str += '<div class="box-price"><div style="font-size:12px;font-weight:600;">ยอดงบคงเหลือ</div><input type="text" value="'+ numberWithCommas(xBalance) +'" style="color:#fff;background:#13c33b;"></div></div>';
   } else {
-    str += '<div class="box-price"><div style="font-size:12px;font-weight:600;">จำนวนเงินที่ใช้</div><input type="text" value="'+ numberWithCommas(xTotalPrice) +'" style="color:#fff;background:#0056ff;"></div></div>';  
+    str += '<div class="box-price"><div style="font-size:12px;font-weight:600;">ยอดงบคงเหลือ</div><input type="text" value="'+ numberWithCommas(xBalance) +'" style="color:#fff;background:#ff0000;"></div></div>';
   }
   str += '</div>';
   str += '<div class="clr"></div>';
@@ -315,31 +347,35 @@ function CalGift() {
     if(xBMStatus==0 || xBMStatus==1) {
       if(xTotalUnitPrice!=0) {
         if(xTotalUnitPrice!=0) {
-          str += '<div class="btn-z3" onclick="DeleteAllOrder(\''+ gID +'\')" style="margin:20px 10px 10px auto;min-width:100px;">ยกเลิก<br>รายการสั่งซื้อ</div>';
+          str += '<div class="btn-z3" onclick="DeleteAllOrder(\''+ gID +'\')" style="margin:10px 10px 10px auto;min-width:100px;">ยกเลิก<br>รายการสั่งซื้อ</div>';
         }
-        str += '<div class="btn-z1" onclick="SaveOrder(\''+ gID +'\')" style="margin:20px 10px 10px auto;min-width:100px;">บันทึกดร๊าฟ<br>รายการสั่งซื้อ</div>';
+        str += '<div class="btn-z1" onclick="SaveOrder(\''+ gID +'\')" style="margin:10px 10px 10px auto;min-width:100px;">บันทึกดร๊าฟ<br>รายการสั่งซื้อ</div>';
       } else {
-        str += '<div class="btn-z0" style="margin:20px 10px 20px auto;min-width:100px;">กรุณาสั่ง<br>ของขวัญปีใหม่</div>';
+        str += '<div class="btn-z0" style="margin:10px 10px 20px auto;min-width:100px;">กรุณาสั่ง<br>ของขวัญปีใหม่</div>';
+        str += '<div class="btn-z1" onclick="GotoOrder()" style="margin:10px 10px 20px auto;min-width:100px;">กลับไป<br>หน้าแรก</div>';
+        //str += '<div class="btn-z0" style="margin:20px 10px 20px auto;min-width:100px;" onclick="GotoOrder">กลับไป<br>หน้าแรก</div>';
       }
     } else if(xBMStatus==2) {
-      str += '<div class="btn-z0" onclick="ViewOrder(\''+ gID +'\')" style="margin:20px 10px 10px auto;min-width:100px;">ดูรายละเอียด<br>รายการสั่งซื้อ</div>';
+      str += '<div class="btn-z0" onclick="ViewOrder(\''+ gID +'\')" style="margin:10px 10px 10px auto;min-width:100px;">ดูรายละเอียด<br>รายการสั่งซื้อ</div>';
+      str += '<div class="btn-z1" onclick="GotoOrder()" style="margin:10px 10px 20px auto;min-width:100px;">กลับไป<br>หน้าแรก</div>';
+
       str += '<div style="font-weight:600;">รายการอยู่ระหว่างการขออนุมัติจากโซน<br></div>'
     } else if(xBMStatus==3) {
       if(xTotalUnitPrice!=0) {
-        str += '<div class="btn-z1" onclick="SaveOrder(\''+ gID +'\')" style="margin:20px 10px 10px auto;min-width:100px;">บันทึกดร๊าฟ<br>รายการสั่งซื้อ</div>';
+        str += '<div class="btn-z1" onclick="SaveOrder(\''+ gID +'\')" style="margin:10px 10px 10px auto;min-width:100px;">บันทึกดร๊าฟ<br>รายการสั่งซื้อ</div>';
         str += '<div style="font-weight:600; color:#ff0000;line-height:1.2;"><font color="#000000">โซนแจ้งทำการทบทวนการสั่งจองใหม่อีกครั้ง</font><br>'+zZoneMemoToBM+'</div>'
       }
     } else if(xBMStatus==9) {
-      str += '<div class="btn-z9" onclick="ViewOrder(\''+ gID +'\')" style="margin:20px 10px 10px auto;min-width:100px;">ดูรายการสั่งซื้อ<br>ของขวัญปีใหม่</div>';
+      str += '<div class="btn-z9" onclick="ViewOrder(\''+ gID +'\')" style="margin:10px 10px 10px auto;min-width:100px;">ดูรายการสั่งซื้อ<br>ของขวัญปีใหม่</div>';
       str += '<div style="font-weight:600; color:#0056ff;">รายการของท่านได้รับการอนุมัติจากโซน เรียบร้อยแล้ว<br></div>'
     } else {
-      str += '<div class="btn-z0" onclick="ViewOrder(\''+ gID +'\')" style="margin:20px 10px 10px auto;min-width:100px;">ดูรายละเอียด<br>รายการสั่งซื้อ</div>';
+      str += '<div class="btn-z0" onclick="ViewOrder(\''+ gID +'\')" style="margin:10px 10px 10px auto;min-width:100px;">ดูรายละเอียด<br>รายการสั่งซื้อ</div>';
       str += '<div style="font-weight:600;">รายการอยู่ระหว่างการขออนุมัติการสั่งจองของขวัญปีใหม่<br></div>'
     }
     //str += '<div class="btn-z3" onclick=location.href="home.html" style="margin:20px auto 20px auto;">ไม่บันทึก<br>รายการ</div>';
     str += '</div>';
   } else {
-    alert("คุณสั่งซื้อเกินงบประมาณที่ได้รับ ระบบจะไม่อนุญาตให้บันทึกรายการสั่งจอง");
+    alert("ขณะนี้คุณได้ทำคำสั่งซื้อของขวัญปีใหม่\nจากงบประมาณที่ได้รับ "+ numberWithCommas(xBMAllocated) +" บาท\nยอดสั่งของขวัญของคุณ "+ numberWithCommas(xTotalPrice) +" บาท\nคุณสั่งเกินไปแล้ว "+ numberWithCommas(xCalAll) +" บาท\nระบบจะไม่อนุญาตให้บันทึกรายการสั่งจอง");
     str += '<div class="btn-t2" onclick=location.href="home.html" type="submit" style="margin-top:20px;">ไม่บันทึกรายการ</div>';
   }
   str += '<hr><div style="margin-top:-10px;text-align:left;padding-bottom: 10px;line-height:1.3; padding-left:10px;">BM : <b>'+ xBMName +'</b><br>Branch : <b>'+ xBranchName +'</b></div>';
@@ -407,7 +443,7 @@ function DeleteRefID(gid) {
 
 
 function ViewOrder(gid) {
-  //alert("View "+gid);
+  //alert("View "+gid); ShowNav
   var str = "";
   var xSumItem = 0;
   var xSumMoney = 0;
@@ -457,6 +493,7 @@ function SaveOrder() {
 
 var xSumMoney = 0;
 function SaveGift(GiftID,GiftPrice,GiftOrder,GiftTotal,NameGift) {
+  document.getElementById('ShowNav').style.display='none';
   LoadDetail();
   xSumMoney = 0;
   var str = "";
@@ -593,8 +630,9 @@ function SaveToZone() {
 
 
 function GotoOrder() {
-  //alert(gid+"--"+gStatus);
-  location.href = "ordergift.html?gid="+gID;
+  //alert(gid+"--"+gStatus);home.html
+  //location.href = "ordergift.html?gid="+gID;
+  location.href = "home.html";
 }
 
 
@@ -648,6 +686,7 @@ function numberWithCommas(num) {
 
 
 function CloseAll() {
+  document.getElementById('ShowNav').style.display='block';
   document.getElementById('id01').style.display='none';
   document.getElementById('id02').style.display='none';
   document.getElementById('id03').style.display='none';

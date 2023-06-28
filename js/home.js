@@ -243,7 +243,8 @@ function DisplayGroup_2() {
           xStatus = "<font color='#28c92a'><b>โซนอนุมัติรายการแล้ว</b></font>";
         }
         str += '<tr><th scope="row" style="text-align: center;">'+ (i+1) +'</th>';
-        str += '<td style="text-align: left; line-height: 1.2;"><font color="#0056ff"><b>'+ doc.data().BranchName +'</b> ['+ doc.data().BMStatus +']</font>';
+        //str += '<td style="text-align: left; line-height: 1.2;"><font color="#0056ff"><b>'+ doc.data().BranchName +'</b> ['+ doc.data().BMStatus +']</font>';
+        str += '<td style="text-align: left; line-height: 1.2;"><font color="#0056ff"><b>'+ doc.data().BranchName +'</b></font>';
         if(doc.data().BMStatus==0) {
           str += '<br>งบประมาณที่ได้รับ = <b>'+ numberWithCommas(doc.data().BMAllocated) +' บาท</b><br>สถานะ : '+ xStatus +'</td>';
         } else if(doc.data().BMStatus==1 || doc.data().BMStatus==3) {
@@ -317,7 +318,8 @@ function DisplayGroup_3() {
         }
 
         str += '<tr><th scope="row" style="text-align: center;">'+ (i+1) +'</th>';
-        str += '<td style="text-align: left; line-height: 1.2;"><font color="#0056ff"><b>'+ doc.data().BranchName +'</b> ['+ doc.data().BMStatus +']</font>';
+        //str += '<td style="text-align: left; line-height: 1.2;"><font color="#0056ff"><b>'+ doc.data().BranchName +'</b> ['+ doc.data().BMStatus +']</font>';
+        str += '<td style="text-align: left; line-height: 1.2;"><font color="#0056ff"><b>'+ doc.data().BranchName +'</b></font>';
         if(doc.data().BMStatus==0) {
           str += '<br>งบประมาณที่ได้รับ = <b>'+ numberWithCommas(doc.data().BMAllocated) +' บาท</b><br>งบประมาณคงเหลือ = <b>'+ numberWithCommas(doc.data().BMBalance) +' บาท</b> <br>สถานะ : '+ xStatus +'</td>';
         } else if(doc.data().BMStatus==1 || doc.data().BMStatus==3) {

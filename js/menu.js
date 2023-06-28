@@ -32,16 +32,16 @@ function OpenPopMenu() {
     xLine += '<div style="margin-top:0px;margin-left:34px;">';
     xLine += '<div class="menu-box1" onclick="window.location.href=\'home.html\';">';
     xLine += '<div class="menu-box-img1"><img src="./img/icon-menu1.png" style="width:35px;"></div>';
-    xLine += '<div class="menu-box-text1">หน้าแรก</div></div>';
+    xLine += '<div class="menu-box-text1" style="color:#000000;">หน้าแรก</div></div>';
     xLine += '<div class="menu-box1" onclick="window.location.href=\'timeline.html\';">';
     xLine += '<div class="menu-box-img1"><img src="./img/icon-menu3.png" style="width:35px;"></div>';
-    xLine += '<div class="menu-box-text1">กำหนดการ</div></div>';
-    xLine += '<div class="menu-box1" onclick="window.location.href=\'promotion.html\';">';
+    xLine += '<div class="menu-box-text1" style="color:#000000;">กำหนดการ</div></div>';
+    xLine += '<div class="menu-box1" onclick="window.location.href=\'gift.html\';">';
     xLine += '<div class="menu-box-img1"><img src="./img/icon-menu2.png" style="width:35px;"></div>';
-    xLine += '<div class="menu-box-text1">รายละเอียด</div></div>';
+    xLine += '<div class="menu-box-text1" style="color:#000000;">ของขวัญปีใหม่</div></div>';
     xLine += '<div class="menu-box1" onclick="window.location.href=\'contact.html\';">';
     xLine += '<div class="menu-box-img1"><img src="./img/icon-menu4.png" style="width:35px;"></div>';
-    xLine += '<div class="menu-box-text1">ติดต่อเรา</div></div>';
+    xLine += '<div class="menu-box-text1" style="color:#000000;">ติดต่อเรา</div></div>';
     xLine += '</div>';
 
 

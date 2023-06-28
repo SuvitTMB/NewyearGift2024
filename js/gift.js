@@ -50,21 +50,21 @@ function LoadGiftStock() {
         if(doc.data().StockGroup==1) {
           str += '<div id="Point1"></div>';
           if(p1==0) {
-            str += '<center><div class="btn-leaderboard">Xของรางวัลที่มีมูลค่าตั้งแต่ 1 - 50 บาท</div></center>';
+            str += '<center><div class="btn-leaderboard">ของขวัญที่มีมูลค่าตั้งแต่ 1 - 50 บาท</div></center>';
             p1 = 1;
           } 
         } else if(doc.data().StockGroup==2) {
           str += '<div id="Point2"></div>';
           if(p2==0) {
-            str += '<center><div class="btn-leaderboard">Yของรางวัลที่มีมูลค่าตั้งแต่ 51 - 100 บาท</div></center>';
+            str += '<center><div class="btn-leaderboard">ของขวัญที่มีมูลค่าตั้งแต่ 51 - 100 บาท</div></center>';
             p2 = 1;
           } 
         } else if(doc.data().StockGroup==3) {
           str += '<div id="Point3"></div>';
-          str += '<center><div class="btn-leaderboard">ของรางวัลที่มีมูลค่าตั้งแต่ 101 - 150 บาท</div></center>';
+          str += '<center><div class="btn-leaderboard">ของขวัญที่มีมูลค่าตั้งแต่ 101 - 200 บาท</div></center>';
         } else if(doc.data().StockGroup==4) {
           str += '<div id="Point4"></div>';
-          str += '<center><div class="btn-leaderboard">ของรางวัลที่มีมูลค่าตั้งแต่ 151 ขึ้นไป</div></center>';
+          str += '<center><div class="btn-leaderboard">ของขวัญที่มีมูลค่าตั้งแต่ 201 - 400 บาท</div></center>';
         }
       //} else {
       //  xCheck = 0;
