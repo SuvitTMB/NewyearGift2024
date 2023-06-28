@@ -48,6 +48,39 @@
     .form-control { 
       height: 28px; padding:2px; background:#b1d2f4; font-weight: 600; text-align: center; font-size: 13px;
     }
+
+.navbar1 {
+  bottom: 0;
+  position: fixed;
+  overflow: hidden;
+  background-color: #dae2ea;
+  width: 100%;
+  height: 150px;
+  z-index: 1000;
+}
+
+.navbar1 a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 6px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.navbar1 a:hover {
+  background: #f1f1f1;
+  color: black;
+}
+
+.navbar1 a.active {
+  background-color: #f68b1f;
+  color: white;
+}
+
   </style>
 
 </head>
@@ -56,10 +89,20 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
+  <div id="ShowNav" class="navbar1" style="border-top:1px solid #4a637d;">
+    <center>
+      <div style="max-width:400px;margin-top:-40px;">
+            <div id="TotalGift" style="background: #dae2ea;"></div>
+            <div class="clr"></div>
+     </div>
+    </center>
+  </div>
+
+
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
       <h1 class="logo mr-auto"><a href="home.html"><span>LINE</span> Retail Society</a></h1>
-      <div class="mobile-nav-toggle d-lg-none" onclick="OpenMenu()">
+      <div class="mobile-nav-toggle d-lg-none" onclick="OpenPopMenu()">
         <i class="icofont-navigation-menu"></i>
       </div>
     </div>
@@ -84,26 +127,18 @@
     <section id="blog" class="blog" style="padding-top:40px;background-color: #fff;max-width: 450px; width:100%;margin:auto;">
       <div class="container">
           <center>
- <!--
-            <div class="btn-t22a"><b>รายการสั่งจองของขวัญปีใหม่ 2567</b></div>
-            <div id="DisplayBudget"></div>
-           <div style="margin-bottom: 0px;" onclick="window.open('https://line.me/ti/g2/0wv_L_gTZE7H8oUANAj_ICInShzFoBu0UeljxQ?utm_source=invitation&utm_medium=QR_code&utm_campaign=default');"><img src="./img/BBD-SalesCampaign.jpg" style="width:100%;"></div>
-            <div style="color:#111111;font-size: 13px;margin-top:10px;" onclick="window.open('https://line.me/ti/g2/0wv_L_gTZE7H8oUANAj_ICInShzFoBu0UeljxQ?utm_source=invitation&utm_medium=QR_code&utm_campaign=default');">สแกน QR Code หรือ คลิกที่ QR Code</div>
-            <div class="font13" style="margin:15px 10px 35px 10px;">เพื่อนพนักงาน หากมีข้อสงสัยหรือต้องการสอบถามคำถามทั่วไปเกี่ยวกับแคมเปญ สามารถเข้าร่วมกลุ่ม LINE Open Chat เป็นอีกหนึ่งช่องทางสำหรับการ การตั้งคำถาม ค้นหาคำตอบ โดยขอให้พนักงานทำการสมัครเข้าใช้งานผ่านช่องทาง LINE Open Chat</div>
--->
-
             <div class="clr"></div>
             <div class="btn-t22a" style="margin-top:0px;"><b>รายการสั่งจองของขวัญปีใหม่ 2567</b></div>
             <div id="JumpMenu"></div>
             <center><div id="loading1" style="margin:90px auto;display: none;"><img src="./img/loading1.gif" style="width:50px;"></div></center>
             <div id="DisplayShowRewards"></div>
-
-
             <div class="clr"></div>
             <div id="DisplayGroup2" style="margin-top:30px;"></div>
             <div class="clr"></div>
+            <!--
             <div id="TotalGift" style="background: #dae2ea;"></div>
             <div class="clr"></div>
+            -->
             <div class="btn-t2" onclick="location.href='home.html'" type="submit" style="margin-top:20px;">กลับหน้าแรก</div>
           </center>
       </div>
@@ -118,7 +153,7 @@
         </center>
       </div>
     </div>
-    <div class="clr" style="height: 50px;"></div>
+    <div class="clr" style="height: 40px;"></div>
   </div>
 
   <div id="id02" class="w3-modal w3-animate-opacity">
@@ -128,7 +163,7 @@
         </center>
       </div>
     </div>
-    <div class="clr" style="height: 50px;"></div>
+    <div class="clr" style="height: 40px;"></div>
   </div>
 
 
@@ -138,25 +173,24 @@
         <div id="DisplayGift"></div>
       </div>
     </div>
-    <div class="clr" style="height: 40px;"></div>
+    <div class="clr" style="height: 160px;"></div>
   </div>
 
   <div id="menu" class="w3-modal w3-animate-opacity">
     <div class="w3-modal-content w3-card-4 bg-menu">
-      <div class="w3-container" style="min-height:300px;width:100%;text-align:center;padding:0px;margin-bottom: 20px;">
+      <div class="w3-container" style="min-height:300px;width:100%;text-align:center;padding:0px;margin-bottom: 20px;background-color: #c7d3e0;">
         <div id="MenuSociety"></div>
-        <div style="margin-left: 5px;margin-top:15px;">
-          <div id="DisplayLink"></div>
-        </div>
       </div>
-      <div class="clr" style="height:70px;"></div>
     </div>
+    <div class="clr" style="height:40px;"></div>
   </div>
 
+<!--
   <footer id="footer">
     <div id="DisplayFooter"></div>
   </footer>
-
+-->
+  <div class="clr" style="height: 130px;"></div>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <script src="assets/vendor/jquery/jquery.min.js"></script>
